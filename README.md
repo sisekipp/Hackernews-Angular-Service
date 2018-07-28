@@ -1,4 +1,4 @@
-# ServiceHackernews  [![Build Status](https://travis-ci.org/sisekipp/Hackernews-Angular-Service.svg?branch=master)](https://travis-ci.org/sisekipp/Hackernews-Angular-Service)
+# ServiceHackernews  [![Build Status](https://travis-ci.org/sisekipp/Hackernews-Angular-Service.svg?branch=master)](https://travis-ci.org/sisekipp/Hackernews-Angular-Service) [![CodeFactor](https://www.codefactor.io/repository/github/sisekipp/hackernews-angular-service/badge/master)](https://www.codefactor.io/repository/github/sisekipp/hackernews-angular-service/overview/master)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.5.
 
