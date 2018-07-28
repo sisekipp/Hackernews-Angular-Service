@@ -1,8 +1,7 @@
-import { NgModule } from '@angular/core';
+import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 
 import {TopComponent} from './component/top.component';
-import {TopService} from './service/top.service';
 import {SharedModule} from '../shared/shared.module';
 
 
@@ -18,7 +17,6 @@ const topRoutes: Routes = [
     SharedModule,
     RouterModule.forChild(topRoutes)
   ],
-  declarations: [TopComponent],
-  providers: [TopService]
+  declarations: [TopComponent]
 })
 export class TopModule { }

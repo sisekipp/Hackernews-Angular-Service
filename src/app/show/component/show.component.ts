@@ -4,7 +4,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {Observable} from 'rxjs';
 
 import {Item} from '../../shared/model/item';
-import {ShowService} from '../service/show.service';
+import {HackernewsService} from '../../shared/service/hackernews.service';
 
 
 @Component({
@@ -17,7 +17,7 @@ export class ShowComponent implements OnInit {
   items: Observable<Item[]>;
   page = 1;
 
-  constructor(private showService: ShowService, private router: Router, private route: ActivatedRoute) {
+  constructor(private hackernewsService: HackernewsService, private router: Router, private route: ActivatedRoute) {
   }
 
   ngOnInit(): void {
@@ -28,7 +28,7 @@ export class ShowComponent implements OnInit {
   }
 
   private loadStories(page: number): void {
-    this.items = this.showService.getStories(page);
+    this.items = this.hackernewsService.getShowStories(page);
 
   }
 

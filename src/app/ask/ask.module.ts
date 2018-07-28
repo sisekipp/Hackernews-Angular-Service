@@ -3,7 +3,6 @@ import {RouterModule, Routes} from '@angular/router';
 
 import {SharedModule} from '../shared/shared.module';
 import {AskComponent} from './component/ask.component';
-import {AskService} from './service/ask.service';
 
 const askRoutes: Routes = [
   {
@@ -17,7 +16,6 @@ const askRoutes: Routes = [
     SharedModule,
     RouterModule.forChild(askRoutes)
   ],
-  declarations: [ AskComponent],
-  providers: [AskService]
+  declarations: [ AskComponent]
 })
 export class AskModule { }

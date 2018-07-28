@@ -3,7 +3,6 @@ import {RouterModule, Routes} from '@angular/router';
 
 import {SharedModule} from '../shared/shared.module';
 import {JobComponent} from './component/job.component';
-import {JobService} from './service/job.service';
 
 const jobRoutes: Routes = [
   {
@@ -17,7 +16,6 @@ const jobRoutes: Routes = [
     SharedModule,
     RouterModule.forChild(jobRoutes)
   ],
-  declarations: [ JobComponent],
-  providers: [JobService]
+  declarations: [ JobComponent]
 })
 export class JobsModule { }

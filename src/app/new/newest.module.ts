@@ -3,7 +3,6 @@ import {RouterModule, Routes} from '@angular/router';
 
 import {SharedModule} from '../shared/shared.module';
 import {NewestComponent} from './component/newest.component';
-import {NewestService} from './service/newest.service';
 
 const newestRoutes: Routes = [
   {
@@ -17,7 +16,6 @@ const newestRoutes: Routes = [
     SharedModule,
     RouterModule.forChild(newestRoutes)
   ],
-  declarations: [ NewestComponent],
-  providers: [NewestService]
+  declarations: [ NewestComponent]
 })
 export class NewestModule { }

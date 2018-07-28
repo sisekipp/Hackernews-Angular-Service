@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 
 import {Observable} from 'rxjs';
 
 import {Item} from '../../shared/model/item';
-import {AskService} from '../service/ask.service';
+import {HackernewsService} from '../../shared/service/hackernews.service';
 
 
 @Component({
@@ -17,7 +17,7 @@ export class AskComponent implements OnInit {
   items: Observable<Item[]>;
   page = 1;
 
-  constructor(private askService: AskService, private router: Router, private route: ActivatedRoute) { }
+  constructor(private hackernewsService: HackernewsService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(parameters => {
@@ -32,7 +32,7 @@ export class AskComponent implements OnInit {
   }
 
   private loadStories(page: number): void {
-    this.items = this.askService.getStories(page);
+    this.items = this.hackernewsService.getAskStories(page);
   }
 
 }

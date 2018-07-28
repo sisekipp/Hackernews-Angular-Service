@@ -16,6 +16,9 @@
       <a class="nav-item nav-link" routerLink="jobs/1">Jobs</a>
     </div>
   </div>
+  <div>
+    <i class="fa fa-spinner fa-pulse fa-2x fa-fw" [hidden]="!loading"></i>
+  </div>
 </nav>
 <div class="container-fluid">
   <router-outlet></router-outlet>

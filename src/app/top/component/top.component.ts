@@ -3,8 +3,8 @@ import {ActivatedRoute, Router} from '@angular/router';
 
 import {Observable} from 'rxjs';
 
-import {TopService} from '../service/top.service';
 import {Item} from '../../shared/model/item';
+import {HackernewsService} from '../../shared/service/hackernews.service';
 
 
 @Component({
@@ -17,7 +17,7 @@ export class TopComponent implements OnInit {
   items: Observable<Item[]>;
   page = 1;
 
-  constructor(private topService: TopService, private router: Router, private route: ActivatedRoute) {
+  constructor(private hackernewsService: HackernewsService, private router: Router, private route: ActivatedRoute) {
   }
 
   ngOnInit(): void {
@@ -33,6 +33,6 @@ export class TopComponent implements OnInit {
   }
 
   private loadStories(page: number): void {
-    this.items = this.topService.getNewStories(page);
+    this.items = this.hackernewsService.getTopStories(page);
   }
 }

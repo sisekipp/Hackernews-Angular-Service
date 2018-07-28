@@ -5,6 +5,8 @@ import {HttpClientModule} from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import {appRoutes} from './app.routing';
+import {SharedModule} from './shared/shared.module';
+import {HackernewsService} from './shared/service/hackernews.service';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,7 @@ import {appRoutes} from './app.routing';
       appRoutes,
       {scrollPositionRestoration: 'enabled'}
     ),
+    SharedModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 
 import {Observable} from 'rxjs';
 
 import {Item} from '../../shared/model/item';
-import {NewestService} from '../service/newest.service';
+import {HackernewsService} from '../../shared/service/hackernews.service';
 
 
 @Component({
@@ -17,7 +17,7 @@ export class NewestComponent implements OnInit {
   items: Observable<Item[]>;
   page = 1;
 
-  constructor(private newestSerive: NewestService, private router: Router, private route: ActivatedRoute) { }
+  constructor(private hackernewsService: HackernewsService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(parameters => {
@@ -32,7 +32,7 @@ export class NewestComponent implements OnInit {
   }
 
   private loadStories(page: number): void {
-    this.items = this.newestSerive.getStories(page);
+    this.items = this.hackernewsService.getNewStories(page);
   }
 
 
