@@ -48,8 +48,7 @@
               "namedChunks": true,
               "aot": true,
               "vendorChunk": false,
-              "buildOptimizer": true,
-              "baseHref": "https://optimistic-chandrasekhar-d5a2d1.netlify.com"
+              "buildOptimizer": true
             }
           }
         },
