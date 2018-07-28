@@ -26,14 +26,9 @@ export class AskComponent implements OnInit {
     });
   }
 
-  public nextStories(): void {
-    this.router.navigate(['ask', ++this.page]);
-  }
-
-  public previouseStories(): void {
-    if (this.page - 1 >= 1) {
-      this.router.navigate(['ask', --this.page]);
-    }
+  onPageChange($event: number) {
+    this.page = $event.valueOf();
+    this.router.navigate(['ask', this.page]);
   }
 
   private loadStories(page: number): void {

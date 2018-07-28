@@ -3,8 +3,6 @@
     <app-paging [page]="page" (pageChange)="onPageChange($event)"></app-paging>
   </div>
 </div>
-
-
 <div class="columns" *ngFor="let item of items | async">
   <div class="column col-xl-12 p-2">
     <app-items  [item]="item"></app-items>

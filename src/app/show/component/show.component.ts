@@ -27,18 +27,13 @@ export class ShowComponent implements OnInit {
     });
   }
 
-  public nextStories(): void {
-    this.router.navigate(['show', ++this.page]);
-  }
-
-  public previouseStories(): void {
-    if (this.page - 1 >= 1) {
-      this.router.navigate(['show', --this.page]);
-    }
-  }
-
   private loadStories(page: number): void {
     this.items = this.showService.getStories(page);
 
+  }
+
+  onPageChange($event: number) {
+    this.page = $event.valueOf();
+    this.router.navigate(['show', this.page]);
   }
 }

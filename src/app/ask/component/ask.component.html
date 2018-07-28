@@ -1,10 +1,11 @@
-<div class="columns p-2">
-  <div class="col-xs-6 col-mx-auto">
-    <button class="btn btn-sm px-2" (click)="previouseStories()">&lt; Prev</button>
-    {{page}}
-    <button class="btn btn-sm px-2" (click)="nextStories()">Next &gt;</button>
+<div class="row justify-content-center align-items-center">
+  <div class="col-3">
+    <app-paging [page]="page" (pageChange)="onPageChange($event)"></app-paging>
   </div>
 </div>
 
-
-<app-items [items]="items"></app-items>
+<div class="columns" *ngFor="let item of items | async">
+  <div class="column col-xl-12 p-2">
+    <app-items  [item]="item"></app-items>
+  </div>
+</div>

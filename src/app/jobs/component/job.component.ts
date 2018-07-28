@@ -26,14 +26,9 @@ export class JobComponent implements OnInit {
     });
   }
 
-  public nextStories(): void {
-    this.router.navigate(['new', ++this.page]);
-  }
-
-  public previouseStories(): void {
-    if (this.page - 1 >= 1) {
-      this.router.navigate(['new', --this.page]);
-    }
+  onPageChange($event: number) {
+    this.page = $event.valueOf();
+    this.router.navigate(['jobs', this.page]);
   }
 
   private loadStories(page: number): void {

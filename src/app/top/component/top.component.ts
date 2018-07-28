@@ -9,20 +9,8 @@ import {Item} from '../../shared/model/item';
 
 @Component({
   selector: 'app-top',
-  template: `
-    <div class="columns p-2">
-      <div class="col-xs-6 col-mx-auto">
-        <button (click)="previouseStories()">&lt; Prev</button>
-        {{page}}
-        <button (click)="nextStories()">Next &gt;</button>
-      </div>
-    </div>
-    <div class="columns" *ngFor="let item of items | async">
-      <div class="column col-xl-12 p-2">
-        <app-items  [item]="item"></app-items>
-      </div>
-    </div>
-  `
+  templateUrl: './top.component.html',
+  styleUrls: ['./top.component.css']
 })
 export class TopComponent implements OnInit {
 
@@ -39,18 +27,12 @@ export class TopComponent implements OnInit {
     });
   }
 
-  public nextStories(): void {
-    this.router.navigate(['top', ++this.page]);
-  }
-
-  public previouseStories(): void {
-    if (this.page - 1 >= 1) {
-      this.router.navigate(['top', --this.page]);
-    }
+  onPageChange($event: number) {
+    this.page = $event.valueOf();
+    this.router.navigate(['top', this.page]);
   }
 
   private loadStories(page: number): void {
     this.items = this.topService.getNewStories(page);
   }
-
 }

@@ -14,7 +14,8 @@ import {appRoutes} from './app.routing';
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot(
-      appRoutes
+      appRoutes,
+      {scrollPositionRestoration: 'enabled'}
     ),
   ],
   providers: [],
